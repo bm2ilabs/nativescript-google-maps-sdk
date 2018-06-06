@@ -201,7 +201,7 @@ Property       | Description
 -------------- |:---------------------------------
 `compassEnabled` | boolean - Whether the compass is enabled/disabled
 `indoorLevelPickerEnabled` | boolean - Whether the indoor level picker is enabled/disabled
-`mapToolbarEnabled` | boolean - Whether the indoor level picker is enabled/disabled ** ****Android only**** **
+`mapToolbarEnabled` | boolean - Whether the toolbar is enabled/disabled ** ****Android only**** **
 `myLocationButtonEnabled` | boolean - Whether the my-location button is enabled/disabled
 `rotateGesturesEnabled` | boolean - Whether the compass is enabled/disabled
 `scrollGesturesEnabled` | boolean - Whether scroll gestures are enabled/disabled
