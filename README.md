@@ -86,6 +86,36 @@ project.ext {
 }
 ```
 
+
+### NativescriptVue
+First copy over the template string resource files for Android
+
+```
+cp -r node_modules/nativescript-google-maps-sdk/platforms/android/res/values template/app/App_Resources/Android/
+
+```
+
+Next modify the file at `template/app/App_Resources/Android/src/main/res/values/nativescript_google_maps_api.xml`, uncomment `nativescript_google_maps_api_key` string and replace `PUT_API_KEY_HERE` with your api key.
+
+Then, in your `AndroidManifest.xml` located at `template/app/App_Resources/Android/src/main/AndroidManifest.xml` insert into your `<application>` tags 
+
+```(xml)
+<meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/nativescript_google_maps_api_key" />
+```
+
+In your main.js add the following 
+
+```(javascript)
+import { MapViewBase } from "nativescript-google-maps-sdk/map-view-common"; // you have to keep this to stop the app from crashing
+Vue.registerElement(
+    "MapView",
+    () => require("nativescript-google-maps-sdk").MapView
+);
+```
+
+
 ## Setup iOS API Key
 
 In the main script of your app `app.js`, use the following to add the API key (providing your key in place of `PUT_API_KEY_HERE`)
